@@ -1,0 +1,48 @@
+{
+	"WorkDescription":"描述运行模式，及具体动作AnalyzeDumpFile,GenJsonFile,TarPakage,GenCallStackFile,SendTarPakage,ReceiveTarPakage",
+	"WorkMode":"Once",
+	"WorkParams":"SendTarPakage",
+
+	"DumpDescription":"和dump分析相关的参数，MoveDumpFile：是否拷贝文件；AnalyzeLevel：堆栈第几层分类；DumpNum：每种崩溃分析几个样本",
+	"DumpInputPath":"L:\\workspace\\dump_analyze\\Debug\\BAK",
+	"DumpOutputPath":"L:\\workspace\\dump_analyze\\Debug\\result",
+	"MoveDumpFile":false,
+	"AnalyzeLevel":1,
+	"DumpNum":2,
+
+	"JsonDescription":"描述json文件生成参数，JsonOutputMaxNum：对于top多少生成json结果并拷贝dmp文件",
+	"JsonInputPath":"L:\\workspace\\dump_analyze\\Debug\\result",
+	"JsonOutputPath":"L:\\workspace\\dump_analyze\\Debug\\output",
+	"JsonOutputMaxNum":50,
+	"JsonModuleFilter":"",
+
+	"TarDescription":"描述tar包相关参数",
+	"TarInputPath":"L:\\workspace\\dump_analyze\\Debug\\output",
+	"TarOutputPath":"L:\\workspace\\dump_analyze\\Debug\\collect.tar.gz",
+
+	"UntarDescription":"描述untar包相关参数",
+	"UntarInputPath":"L:\\workspace\\dump_analyze\\Debug\\output",
+	"UntarOutputPath":"L:\\workspace\\dump_analyze\\Debug\\collect.tar.gz",
+
+	"GenCallStackDescription":"描述生成堆栈参数，",
+	"GenCallStackInputPath":"L:\\workspace\\dump_analyze\\Debug\\test\\collect",
+	"GenCallStackOutputPath":"",
+	"GenCallStackCmd":"C:\\Program Files (x86)\\Debugging Tools for Windows (x86)\\windbg.exe -y O:\\360chrome_symbols;srv*E:\\dump\\symbols*http://msdl.microsoft.com/download/symbols  -c \"",
+	"GenCallStackParams":".ecxr;kv 200;q",
+	"GenCallStackVersionFilter":"7.0.0.832,7.1.0.300",
+
+	"SendTarPakagePath":"L:\\collect.tar.gz",
+	"SendTarPakageServerInfo":"localhost:50000",
+
+	"ReceiveTarPakagePath":"L:\\workspace\\dump_analyze\\Debug\\collect-out.tar.gz",
+	"ReceiveTarPakagePortInfo":":50000",
+	"ReceiveTarPakageAfterWorkParams":"GenCallStackFile",
+
+	"CycleTimeDescription":"描述周期，一天或一小时,day,hour,none",
+	"CycleTimeType":"day",
+	"CycleTimeDumpInputPathAppend":"\\BAK",
+
+	
+	"TimeInternal":10,
+	"SymbolPath":"SymbolPath"
+}
